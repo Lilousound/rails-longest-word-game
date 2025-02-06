@@ -1,0 +1,19 @@
+<h1 class="m-4">✨ New game ✨</h1>
+
+<div class="m-3 fs-2 row">
+  <% @letters.each do |num|%>
+  <div class="border col-1 p-0 shadow p-3 mb-5 bg-body-tertiary rounded m-1 text-center bg-info text-white">
+        <%= num %>
+  </div>
+  <% end %>
+</div>
+
+<div class="m-3">
+  <form action="/score" method="post" data-turbo="false" class="input-group">
+  <input type="text" name="word" placeholder="Enter your word">
+  <input type="submit" value="submit" class="btn btn-primary filestyle">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+</form>
+
+</div>
